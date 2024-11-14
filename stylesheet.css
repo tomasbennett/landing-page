@@ -210,8 +210,9 @@ footer{
 .title-text button,
 .call-to-action-button{
     cursor: pointer;
-    transition: 0.4s ease;
-    transition: transform 0.1s ease;
+    transition: 0.3s background-color ease;
+    transition: 0.3s color ease;
+    transition: 0.1s transform ease;
 }
 
 .title-text button:hover, .title-text button:focus,
