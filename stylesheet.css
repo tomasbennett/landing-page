@@ -186,10 +186,12 @@ footer{
     justify-content: space-around;
     align-items: center;
     width: 80%;
-    height: 10%;
+    height: 16%;
     min-height: fit-content;
     margin-bottom: 20px;
     background-color: var(--sign-in-background-colour);
+    color: var(--heading-large-text-colour);
+    border-radius: 5px;
 }
 
 .call-to-action-button{
@@ -197,7 +199,6 @@ footer{
     justify-content: center;
     align-items: center;
     background-color: var(--sign-in-background-colour);
-    color: var(--heading-large-text-colour);
     width: 95px;
     height: 30px;
     border-radius: 5px;
