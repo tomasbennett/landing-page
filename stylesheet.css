@@ -210,13 +210,12 @@ footer{
 .title-text button,
 .call-to-action-button{
     cursor: pointer;
-    transition: 0.3s background-color ease;
-    transition: 0.3s color ease;
+    transition: 0.3s ease;
     transition: 0.1s transform ease;
 }
 
-.title-text button:hover, .title-text button:focus,
-.call-to-action-button:hover, .call-to-action-button:focus{
+.title-text button:hover, 
+.call-to-action-button:hover{
     background-color: var(--heading-large-text-colour);
     color: var(--sign-in-background-colour);
 }
@@ -226,7 +225,6 @@ footer{
     transform: scale(0.95);
 }
 
-.header-list-links a:hover,
-.header-list-links a:focus{
+.header-list-links a:hover{
     color: var(--heading-large-text-colour);
 }
