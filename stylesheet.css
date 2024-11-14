@@ -153,10 +153,19 @@ footer{
     max-height: 96px;
 }
 
-
 .main-image-text-element p{
     text-align: center;
     margin-top: 5px;
+}
+
+.main-paragraph-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--heading-small-text-colour);
+    min-height: 300px;
+    width: 100%;
 }
 
 .call-to-action-container{
