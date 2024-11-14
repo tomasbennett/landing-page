@@ -47,6 +47,7 @@ header{
 
 .header-list-links a{
     text-decoration: none;
+    transition: 0.3s color ease;
 }
 
 .title-container{
@@ -203,5 +204,28 @@ footer{
     height: 30px;
     border-radius: 5px;
     border: 2px solid var(--heading-large-text-colour);
+    color: var(--heading-large-text-colour);
+}
+
+.title-text button,
+.call-to-action-button{
+    cursor: pointer;
+    transition: 0.4s ease;
+    transition: transform 0.1s ease;
+}
+
+.title-text button:hover, .title-text button:focus,
+.call-to-action-button:hover, .call-to-action-button:focus{
+    background-color: var(--heading-large-text-colour);
+    color: var(--sign-in-background-colour);
+}
+
+.title-text button:active, 
+.call-to-action-button:active{
+    transform: scale(0.95);
+}
+
+.header-list-links a:hover,
+.header-list-links a:focus{
     color: var(--heading-large-text-colour);
 }
