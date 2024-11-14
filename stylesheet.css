@@ -158,14 +158,26 @@ footer{
     margin-top: 5px;
 }
 
-.main-paragraph-container{
+.main-paragraph-container-outer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--heading-small-text-colour);
+    min-height: 300px;
+}
+
+.main-paragraph-container-inner{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--heading-small-text-colour);
-    min-height: 300px;
-    width: 100%;
+    width: 70%;
+    height: 80%
+}
+
+.main-paragraph-container-inner p{
+    align-self: flex-end;
 }
 
 .call-to-action-container{
