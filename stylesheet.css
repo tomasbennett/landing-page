@@ -109,7 +109,7 @@ main{
     background-color: var(--heading-large-text-colour);
     margin-top: 80px;
     width: 100vw;
-    min-height: 500px;
+    min-height: 670px;
     height: fit-content;
     flex-grow: 1;
 }
