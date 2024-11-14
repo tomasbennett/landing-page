@@ -110,7 +110,7 @@ main{
     margin-top: 80px;
     width: 100vw;
     min-height: 500px;
-
+    height: fit-content;
     flex-grow: 1;
 }
 
@@ -127,6 +127,7 @@ footer{
     flex-direction: column;
     align-items: center;
     width: auto;
+    justify-content: space-around;
 }
 
 .main-image-text-container{
@@ -181,7 +182,14 @@ footer{
 }
 
 .call-to-action-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    height: 10%;
+    min-height: fit-content;
     margin-bottom: 20px;
+    background-color: var(--sign-in-background-colour);
 }
 
 .call-to-action-button{
