@@ -202,5 +202,6 @@ footer{
     width: 95px;
     height: 30px;
     border-radius: 5px;
-    border: 1px solid var(--heading-large-text-colour);
+    border: 2px solid var(--heading-large-text-colour);
+    color: var(--heading-large-text-colour);
 }
