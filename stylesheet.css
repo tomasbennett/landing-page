@@ -214,8 +214,8 @@ footer{
     transition: 0.1s transform ease;
 }
 
-.title-text button:hover, 
-.call-to-action-button:hover{
+.title-text button:focus, 
+.call-to-action-button:focus{
     background-color: var(--heading-large-text-colour);
     color: var(--sign-in-background-colour);
 }
@@ -225,6 +225,6 @@ footer{
     transform: scale(0.95);
 }
 
-.header-list-links a:hover{
+.header-list-links a:focus{
     color: var(--heading-large-text-colour);
 }
