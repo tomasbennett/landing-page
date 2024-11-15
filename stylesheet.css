@@ -1,3 +1,5 @@
+/* The root has accessible variables in case we implement a colour changing scheme (such as dark-mode) in the future */
+
 :root{
     --main-background-colour: #1F2937;
     --heading-large-text-colour: #F9F8FA;
@@ -29,6 +31,10 @@ header{
     width: var(--items-width);
 }
 
+.header-logo{
+    font-size: 24px;
+}
+
 .header-logo,
 .title-text h1{
     color: var(--heading-large-text-colour);
@@ -48,6 +54,7 @@ header{
 .header-list-links a{
     text-decoration: none;
     transition: 0.3s color ease;
+    font-size: 18px;
 }
 
 .title-container{
@@ -79,6 +86,11 @@ header{
 .title-image,
 .title-text{
     flex-basis: 45%;
+}
+
+.title-text h1{
+    font-size: 48px;
+    font-weight: 900;
 }
 
 .title-text button{
@@ -131,6 +143,11 @@ footer{
     justify-content: space-around;
 }
 
+.main-heading{
+    font-size: 36px;
+    font-weight: 900;
+}
+
 .main-image-text-container{
     display: flex;
     width: 80%;
@@ -178,7 +195,13 @@ footer{
     height: 80%
 }
 
+.main-paragraph-container-inner q{
+    font-size: 36px;
+    font-style: italic;
+}
+
 .main-paragraph-container-inner p{
+    margin-top: 5px;
     align-self: flex-end;
 }
 
@@ -214,8 +237,8 @@ footer{
     transition: 0.1s transform ease;
 }
 
-.title-text button:focus, 
-.call-to-action-button:focus{
+.title-text button:hover, 
+.call-to-action-button:hover{
     background-color: var(--heading-large-text-colour);
     color: var(--sign-in-background-colour);
 }
@@ -225,6 +248,6 @@ footer{
     transform: scale(0.95);
 }
 
-.header-list-links a:focus{
+.header-list-links a:hover{
     color: var(--heading-large-text-colour);
 }
