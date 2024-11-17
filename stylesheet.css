@@ -5,7 +5,6 @@
     --heading-large-text-colour: #F9F8FA;
     --heading-small-text-colour: #E5E7EB;
     --sign-in-background-colour: #3882F6;
-    --items-width: clamp(200px, 80vw, 100vw);
 }
 
 *, *::after, *::before{
@@ -19,7 +18,8 @@ html, body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
     background-color: var(--main-background-colour);
 }
 
@@ -27,9 +27,19 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 80vw;
+
     margin-top: 10px;
-    width: var(--items-width);
 }
+
+/* 
+   Apply a container query, when the screen gets too thin
+   the header-logo will go into it's own row and will need
+   to be bigger than when it is next to the photo.
+
+   Ignore the font-size: 24px and apply a vw font-size
+   that changes when the container size changes. 
+*/
 
 .header-logo{
     font-size: 24px;
@@ -51,18 +61,44 @@ header{
     gap: 15px;
 }
 
+.header-list-links li{
+    display: flex;
+}
+
 .header-list-links a{
     text-decoration: none;
     transition: 0.3s color ease;
     font-size: 18px;
+    flex-grow: 1;
 }
+
+/*
+   title-container should be a flex-wrap whereby if the 
+   screen gets too small the image goes to the bottom.
+
+   NOTE: title-container will always be the same vw and
+   the dimensions of the photo must remain the same but
+   will have a minimum width on the next to text level.
+
+   I'm actually just thinking now when the photo snaps
+   down below the text it should originally be 80vw the
+   same as the text, maybe, but when the screen shrinks
+   further it should become 100vw.
+
+   Finally, for the button, it will shrink
+   and grow depending on the size of its container
+   just like h1 in title-container.
+
+   Text may stay the same size in p tags as they seem
+   to for other websites stay the same size no matter 
+   what.
+*/
+
 
 .title-container{
     display: flex;
     justify-content: space-between;
-    width: var(--items-width);
-    height: 20vh;
-    min-height: fit-content;
+    width: 80vw;
     margin-top: 30px;
 }
 
@@ -72,6 +108,12 @@ header{
     justify-content: center;
     align-items: flex-start;
 }
+
+/*
+   title-image img should have alt text that is centered in
+   terms of position with padding so that it isn't touching
+   the sides.
+*/
 
 .title-image{
     display: flex;
@@ -105,6 +147,17 @@ header{
     border: 0;
     margin-top: 5px;
 }
+
+/*
+   I don't know if this will be a last thing to do but when
+   making the height shorter of the screen decrease the gaps
+   in main-footer-container's white background section to
+   bring the sections closer together until a certain point
+   then just let it overflow I think.
+   NOTE: We will have to set a limit on how far the gap can
+   stretch out as well so that on tall screens it isn't too
+   far separated.
+*/
 
 .main-footer-container{
     display: flex;
@@ -143,10 +196,33 @@ footer{
     justify-content: space-around;
 }
 
+/*
+   main-heading should simply be able to go onto two lines
+   when necessary aka the screen is too thin.
+*/
+
 .main-heading{
     font-size: 36px;
     font-weight: 900;
 }
+
+/*
+   The main changes will come here: 
+   It needs a wider gap in 
+   general.
+   When the screen is incredibly wide the blocks should be
+   well spaced and all on the same line
+   As the screen width closes the gap shortens and the blocks
+   get a little smaller until the blocks reach a certain
+   width whereby it will flex-wrap making the blocks size a
+   bit bigger with more of a gap again.
+   This will dynamically continue with however many blocks
+   there are until all blocks are on one line and reach their
+   min-width where they will overflow.
+   Also the text when everything is on one column will
+   originally be to the right of the block until it shrinks
+   and needs to go on the bottom of the blocks.
+*/
 
 .main-image-text-container{
     display: flex;
@@ -186,6 +262,11 @@ footer{
     min-height: 300px;
 }
 
+/*
+   This should be the easiest whereby it just stacks as
+   per usual.
+*/
+
 .main-paragraph-container-inner{
     display: flex;
     flex-direction: column;
@@ -204,6 +285,20 @@ footer{
     margin-top: 5px;
     align-self: flex-end;
 }
+
+/*
+   call-to-action-container needs to better fit it's content
+   having some padding.
+   
+   It needs to have a max-width because even though it won't
+   match the width of the other boxes or header content
+   it is better suited with a max-width.
+   NOTE: It shouldn't get any smaller until the screen forces
+   it to so don't use vw until it fits the size of the screen.
+
+   It needs to flex-wrap when the screen gets too small with
+   the text and button being aligned in the center.
+*/
 
 .call-to-action-container{
     display: flex;
