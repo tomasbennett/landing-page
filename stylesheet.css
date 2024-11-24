@@ -32,6 +32,10 @@ header{
     margin-top: 10px;
 }
 
+.header-logo{
+    font-size: 24px;
+}
+
 /* 
    Apply a container query, when the screen gets too thin
    the header-logo will go into it's own row and will need
@@ -41,8 +45,16 @@ header{
    that changes when the container size changes. 
 */
 
-.header-logo{
-    font-size: 24px;
+/*
+    Actually trying a methodology first, use CSS and HTML
+    to hold a burger bar and display: none; for it until 
+    the screen gets to a certain width to see if this is the 
+    meta.
+*/
+
+.header-nav-links{
+    display: flex;
+    justify-content: flex-end;
 }
 
 .header-logo,
@@ -97,8 +109,12 @@ header{
 
 .title-container{
     display: flex;
-    justify-content: space-between;
-    width: 80vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(55px, 10%, 80px);
+    width: 100%;
+    padding: 0 10vw;
     margin-top: 30px;
 }
 
@@ -106,7 +122,6 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
 }
 
 /*
@@ -115,19 +130,29 @@ header{
    the sides.
 */
 
+.title-text,
+.title-image{
+    flex: 1;
+}
+
 .title-image{
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
-    height: 100%;
     background-color: gray;
     color: var(--heading-large-text-colour);
     justify-self: flex-end;
+
+    min-width: 490.391px;
+    height: 275.844px;
+    
 }
 
-.title-image,
-.title-text{
-    flex-basis: 45%;
+.title-image img{
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .title-text h1{
