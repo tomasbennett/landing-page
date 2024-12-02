@@ -40,7 +40,7 @@
     background: rgba(245, 245, 245, 0.1);
 }
 
-@media (max-width: 782px){
+@media (max-width: 700px){
 
     .hamburger-menu-label{
         display: flex;
