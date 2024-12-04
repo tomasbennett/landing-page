@@ -203,44 +203,36 @@ header{
    far separated.
 */
 
-.main-footer-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* width: 100vw; */
-    flex-grow: 1;
+main{
+    display: grid;
+    grid-template-columns: subgrid;
+    /* flex-direction: column;
+    justify-content: space-around;
+    align-items: center; */
+
+    place-items: center;
+
+    background-color: var(--heading-large-text-colour);
+    margin-top: 40px;
+    /* width: 100vw;
+    min-height: 720px;
+    height: fit-content; */
+    /* flex-grow: 1; */
 
     grid-area: main;
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--heading-large-text-colour);
-    margin-top: 80px;
-    width: 100vw;
-    min-height: 720px;
-    height: fit-content;
-    flex-grow: 1;
+main > *{
+    grid-column: 2 / 2;
 }
 
-footer{
-    display: flex;
-    align-items: center;
-    height: 40px;
-    color: var(--heading-large-text-colour);
-    font-size: small;
-}
-
-.main-upper{
+/* .main-upper{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: auto;
     justify-content: space-around;
-}
+} */
 
 /*
    main-heading should simply be able to go onto two lines
@@ -250,6 +242,7 @@ footer{
 .main-heading{
     font-size: 36px;
     font-weight: 900;
+    margin-top: 10px;
 }
 
 /*
@@ -271,41 +264,73 @@ footer{
 */
 
 .main-image-text-container{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr 
+                        auto;
+
+    column-gap: 20px;
+
     width: 80%;
+    height: 300px;
+
+    /* place-items: center; */
+
     margin-top: 20px;
 }
 
 .main-image-text-element{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-rows: subgrid;
+
+    place-items: center;
+
+    row-gap: 5px;
+
+    grid-row: span 2;
 }
 
 .main-image-text-element .main-image{
-    border: 2px solid var(--sign-in-background-colour);
-    border-radius: 5px;
-    width: 100px;
-    height: 100px;
+    grid-row: 1;
+
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    container-type: size;
+    container-name: main-image-container;
+
+    overflow: hidden;
 }
 
 .main-image-text-element .main-image img{
-    max-width: 96px;
-    max-height: 96px;
+    border: 2px solid var(--sign-in-background-colour);
+    border-radius: 5px;
+
+    /* width: 100%;
+    height: 100%; */
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
 }
 
 .main-image-text-element p{
+    grid-row: -1;
+
     text-align: center;
-    margin-top: 5px;
 }
 
 .main-paragraph-container-outer{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color: var(--heading-small-text-colour);
-    min-height: 300px;
+    flex-direction: column;
+
+    max-width: 80%;
+    max-height: 200px;
+
+    margin: 100px 0px 80px;
 }
 
 /*
@@ -313,23 +338,18 @@ footer{
    per usual.
 */
 
-.main-paragraph-container-inner{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 70%;
-    height: 80%
-}
-
 .main-paragraph-container-inner q{
     font-size: 36px;
     font-style: italic;
+
+    text-wrap: pretty;
 }
 
 .main-paragraph-container-inner p{
+    display: flex;
+    justify-content: flex-end;
+
     margin-top: 5px;
-    align-self: flex-end;
 }
 
 /*
@@ -347,28 +367,43 @@ footer{
 */
 
 .call-to-action-container{
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 30px 1.5fr 0.5fr 30px;
+
+    column-gap: 20px;
+    
     align-items: center;
-    width: 80%;
-    height: 16%;
-    min-height: fit-content;
+    /* width: 100%; */
+
+    height: 100px; 
+
     margin-bottom: 20px;
+
     background-color: var(--sign-in-background-colour);
     color: var(--heading-large-text-colour);
+
     border-radius: 5px;
 }
 
+.call-to-action-text{
+    grid-column: 2;
+}
+
 .call-to-action-button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--sign-in-background-colour);
+    justify-self: end;
+
+    text-align: center;
+
     width: 95px;
     height: 30px;
+
+    background-color: var(--sign-in-background-colour);
+    color: var(--heading-large-text-colour);
+
     border-radius: 5px;
     border: 2px solid var(--heading-large-text-colour);
-    color: var(--heading-large-text-colour);
+
+    grid-column: 3;
 }
 
 .title-text button,
@@ -376,6 +411,16 @@ footer{
     cursor: pointer;
     transition: 0.3s ease;
     transition: 0.1s transform ease;
+}
+
+footer{
+    justify-self: center;
+
+    color: var(--heading-large-text-colour);
+    font-size: 9px;
+    margin: 8px auto;
+
+    grid-area: footer;
 }
 
 .title-text button:hover, 
@@ -391,8 +436,4 @@ footer{
 
 .header-list-links a:hover{
     color: var(--heading-large-text-colour);
-}
-
-footer{
-    grid-area: footer;
 }
