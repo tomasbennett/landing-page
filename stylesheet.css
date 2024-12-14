@@ -22,10 +22,6 @@ html, body{
                          "main main main"
                          ". footer .";
     
-    /* place-content: stretch;
-    align-items: stretch; */
-
-
     height: auto;
     min-height: 100vh;
     width: 100vw;
@@ -36,7 +32,6 @@ html, body{
 header{
     display: flex;
     align-items: center; 
-    /* width: 80vw; */
 
     margin: 10px 0px;
 
@@ -48,25 +43,13 @@ header{
     margin-right: auto;
 }
 
-/* 
-   Apply a container query, when the screen gets too thin
-   the header-logo will go into it's own row and will need
-   to be bigger than when it is next to the photo.
-
-   Ignore the font-size: 24px and apply a vw font-size
-   that changes when the container size changes. 
-*/
-
-/*
-    Actually trying a methodology first, use CSS and HTML
-    to hold a burger bar and display: none; for it until 
-    the screen gets to a certain width to see if this is the 
-    meta.
-*/
-
 .header-nav-links{
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(60px, auto);
+
     align-items: center;
+
+    position: relative;
 }
 
 .header-logo,
@@ -82,51 +65,22 @@ header{
 .header-list-links{
     display: flex;
     list-style: none;
-    gap: 15px;
-}
 
-/* .header-list-links li{
-    display: flex;
-} */
+    column-gap: 15px;
+}
 
 .header-list-links a{
     text-decoration: none;
     transition: 0.3s color ease;
+
     font-size: 18px;
-    /* flex-grow: 1; */
 }
-
-/*
-   title-container should be a flex-wrap whereby if the 
-   screen gets too small the image goes to the bottom.
-
-   NOTE: title-container will always be the same vw and
-   the dimensions of the photo must remain the same but
-   will have a minimum width on the next to text level.
-
-   I'm actually just thinking now when the photo snaps
-   down below the text it should originally be 80vw the
-   same as the text, maybe, but when the screen shrinks
-   further it should become 100vw.
-
-   Finally, for the button, it will shrink
-   and grow depending on the size of its container
-   just like h1 in title-container.
-
-   Text may stay the same size in p tags as they seem
-   to for other websites stay the same size no matter 
-   what.
-*/
-
 
 .title-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: clamp(55px, 8vw, 80px);
     row-gap: 0px;
-    /* width: 100%; */
-    /* padding: 0 10vw; */
-    /* margin-top: 30px; */
 
     grid-area: thumbnail;
 }
@@ -143,29 +97,17 @@ header{
    the sides.
 */
 
-/* .title-text,
 .title-image{
-    flex: 1;
-} */
-
-.title-image{
-    display: flex;
-
     width: 100%;
 
     background-color: gray;
     color: var(--heading-large-text-colour);
-
-    
-    /* min-width: 490.391px;
-    height: 275.844px; */
-    
 }
 
 .title-image img{
-    text-align: center;
     width: 100%;
     height: 100%;
+
     object-fit: contain;
 }
 
@@ -183,41 +125,27 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+
     background-color: var(--sign-in-background-colour);
     color: var(--heading-large-text-colour);
+
     width: 95px;
     height: 30px;
+
     border-radius: 5px;
-    border: 0;
+    border: 0px;
+
     margin-top: 10px;
 }
-
-/*
-   I don't know if this will be a last thing to do but when
-   making the height shorter of the screen decrease the gaps
-   in main-footer-container's white background section to
-   bring the sections closer together until a certain point
-   then just let it overflow I think.
-   NOTE: We will have to set a limit on how far the gap can
-   stretch out as well so that on tall screens it isn't too
-   far separated.
-*/
 
 main{
     display: grid;
     grid-template-columns: subgrid;
-    /* flex-direction: column;
-    justify-content: space-around;
-    align-items: center; */
 
     place-items: center;
 
     background-color: var(--heading-large-text-colour);
     margin-top: 40px;
-    /* width: 100vw;
-    min-height: 720px;
-    height: fit-content; */
-    /* flex-grow: 1; */
 
     grid-area: main;
 }
@@ -226,38 +154,16 @@ main > *{
     grid-column: 2 / 2;
 }
 
-/* .main-upper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: auto;
-    justify-content: space-around;
-} */
-
-/*
-   main-heading should simply be able to go onto two lines
-   when necessary aka the screen is too thin.
-*/
-
 .main-heading{
     font-size: 36px;
     font-weight: 900;
+
     margin-top: 10px;
+
+    text-align: center;
 }
 
 /*
-   The main changes will come here: 
-   It needs a wider gap in 
-   general.
-   When the screen is incredibly wide the blocks should be
-   well spaced and all on the same line
-   As the screen width closes the gap shortens and the blocks
-   get a little smaller until the blocks reach a certain
-   width whereby it will flex-wrap making the blocks size a
-   bit bigger with more of a gap again.
-   This will dynamically continue with however many blocks
-   there are until all blocks are on one line and reach their
-   min-width where they will overflow.
    Also the text when everything is on one column will
    originally be to the right of the block until it shrinks
    and needs to go on the bottom of the blocks.
@@ -273,8 +179,6 @@ main > *{
 
     width: 80%;
     height: 300px;
-
-    /* place-items: center; */
 
     margin-top: 20px;
 }
@@ -309,9 +213,6 @@ main > *{
     border: 2px solid var(--sign-in-background-colour);
     border-radius: 5px;
 
-    /* width: 100%;
-    height: 100%; */
-
     aspect-ratio: 1 / 1;
 
     object-fit: cover;
@@ -333,11 +234,6 @@ main > *{
     margin: 100px 0px 80px;
 }
 
-/*
-   This should be the easiest whereby it just stacks as
-   per usual.
-*/
-
 .main-paragraph-container-inner q{
     font-size: 36px;
     font-style: italic;
@@ -352,20 +248,6 @@ main > *{
     margin-top: 5px;
 }
 
-/*
-   call-to-action-container needs to better fit it's content
-   having some padding.
-   
-   It needs to have a max-width because even though it won't
-   match the width of the other boxes or header content
-   it is better suited with a max-width.
-   NOTE: It shouldn't get any smaller until the screen forces
-   it to so don't use vw until it fits the size of the screen.
-
-   It needs to flex-wrap when the screen gets too small with
-   the text and button being aligned in the center.
-*/
-
 .call-to-action-container{
     display: grid;
     grid-template-columns: 30px 1.5fr 0.5fr 30px;
@@ -373,7 +255,6 @@ main > *{
     column-gap: 20px;
     
     align-items: center;
-    /* width: 100%; */
 
     height: 100px; 
 
