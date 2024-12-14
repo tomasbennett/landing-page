@@ -1,6 +1,10 @@
 /* The root has accessible variables in case we implement a colour changing scheme (such as dark-mode) in the future */
 
 :root{
+    --em-value: 3em;
+}
+
+:root{
     --main-background-colour: #1F2937;
     --heading-large-text-colour: #F9F8FA;
     --heading-small-text-colour: #E5E7EB;
