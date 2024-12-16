@@ -1,7 +1,7 @@
 /* The root has accessible variables in case we implement a colour changing scheme (such as dark-mode) in the future */
 
 :root{
-    --em-value: 3em;
+    font-size: 62.5%;
 }
 
 :root{
@@ -18,9 +18,13 @@
     padding: 0;
 }
 
+body{
+    font-size: 1.6rem;
+}
+
 html, body{
     display: grid;
-    grid-template-columns: clamp(20px, 5vw, 60px) 1fr clamp(20px, 5vw, 60px);
+    grid-template-columns: clamp(25px, 5vw, 60px) 1fr clamp(25px, 5vw, 60px);
     grid-template-rows: auto
                         auto
                         minmax(auto, 1fr)
@@ -47,7 +51,7 @@ header{
 }
 
 .header-logo{
-    font-size: 24px;
+    font-size: 2.4rem;
     white-space: nowrap;
 
     margin-right: auto;
@@ -83,7 +87,7 @@ header{
     text-decoration: none;
     transition: 0.3s color ease;
 
-    font-size: 18px;
+    font-size: 2rem;
 }
 
 .title-container{
@@ -123,16 +127,18 @@ header{
 }
 
 .title-text h1{
-    font-size: 48px;
+    font-size: 4.8rem;
     font-weight: 900;
 
 /* This line will need to be adjusted when text becomes rem based */
    
-    line-height: 50px;
-    margin-bottom: 10px;
+    line-height: 5rem;
+    margin-bottom: 1rem;
 }
 
 .title-text button{
+    align-self: flex-start;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,12 +146,11 @@ header{
     background-color: var(--sign-in-background-colour);
     color: var(--heading-large-text-colour);
 
-    width: 95px;
-    height: 30px;
+    height: 3rem;
+    aspect-ratio: 19 / 6;
 
     border-radius: 5px;
     border: 0px;
-
     margin-top: 10px;
 }
 
@@ -166,12 +171,12 @@ main > *{
 }
 
 .main-heading{
-    font-size: 36px;
+    font-size: 3.6rem;
     font-weight: 900;
 
     margin-top: 10px;
 
-    text-align: center;
+    /* text-align: center; */
 }
 
 /*
@@ -184,7 +189,7 @@ main > *{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 1fr 
-                        auto;
+                    auto;
 
     column-gap: 20px;
 
@@ -262,18 +267,15 @@ main > *{
 .call-to-action-container{
     display: grid;
     grid-template-columns: 30px 1.5fr 0.5fr 30px;
-
     column-gap: 20px;
-    
     align-items: center;
 
     height: 100px; 
 
-    margin-bottom: 20px;
-
     background-color: var(--sign-in-background-colour);
     color: var(--heading-large-text-colour);
 
+    margin-bottom: 20px;
     border-radius: 5px;
 }
 
@@ -286,11 +288,11 @@ main > *{
 
     text-align: center;
 
-    width: 95px;
-    height: 30px;
+    height: 3rem;
+    aspect-ratio: 19 / 6;
 
-    background-color: var(--sign-in-background-colour);
-    color: var(--heading-large-text-colour);
+    background-color: inherit;
+    color: inherit;
 
     border-radius: 5px;
     border: 2px solid var(--heading-large-text-colour);
@@ -309,7 +311,7 @@ footer{
     justify-self: center;
 
     color: var(--heading-large-text-colour);
-    font-size: 9px;
+    font-size: 1.2rem;
     margin: 8px auto;
 
     grid-area: footer;
