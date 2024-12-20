@@ -41,6 +41,13 @@ html, body{
     background-color: var(--main-background-colour);
 }
 
+svg {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+}
+
 header{
     display: flex;
     align-items: center; 

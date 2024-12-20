@@ -110,11 +110,16 @@
             content: "";
             /* display: inline-block; */
 
-            background-image: url(bullet-points-inkscape.svg);
+            /* background-image: url(bullet-points-inkscape.svg);
             background-size: contain;
-            background-repeat: no-repeat;
+            background-repeat: no-repeat; */
+            background-color: var(--heading-small-text-colour);
+            
 
-            width: 1.5rem;
+
+            clip-path: url(#clip);
+
+            width: 2.5rem;
             margin-right: auto;
         }
         
